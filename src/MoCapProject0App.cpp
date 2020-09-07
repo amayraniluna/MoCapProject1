@@ -10,7 +10,7 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-class MoCapProject0App : public App {
+class MoCapProject1App : public App {
   public:
 	void setup() override;
 	void mouseDown( MouseEvent event ) override;
@@ -18,21 +18,21 @@ class MoCapProject0App : public App {
 	void draw() override;
 };
 
-void MoCapProject0App::setup()
+void MoCapProject1App::setup()
 {
 }
 
-void MoCapProject0App::mouseDown( MouseEvent event )
+void MoCapProject1App::mouseDown( MouseEvent event )
 {
 }
 
-void MoCapProject0App::update()
+void MoCapProject1App::update()
 {
 }
 
-void MoCapProject0App::draw()
+void MoCapProject1App::draw()
 {
 	gl::clear( Color( 0, 0, 0 ) ); 
 }
 
-CINDER_APP( MoCapProject0App, RendererGl )
+CINDER_APP( MoCapProject1App, RendererGl )
