@@ -110,6 +110,15 @@ void FrameDifferencingApp::keyDown( KeyEvent event )
         //TODO: do a thing. Like save the current frame.
     }
     //call the squares class to set n here
+    else if(event.getChar() == '1'){
+        mSquare.setN(10);
+    }
+    else if(event.getChar() == '2'){
+        mSquare.setN(20);
+    }
+    else if(event.getChar() == '3'){
+        mSquare.setN(30);
+    }
 
 }
 
