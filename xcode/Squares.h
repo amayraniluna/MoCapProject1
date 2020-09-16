@@ -1,9 +1,16 @@
-//
-//  Squares.h
-//  MoCapProject1
-//
-//  Created by Amayrani Luna on 9/8/20.
-//
+/*
+ *
+   Programmer: Amayrani Luna
+   date: 9/7/20
+   Squares.h
+   MoCapProject1
+   
+    This class holds the variable n and, uses this variable to divided the screen into n*n
+    squares, determines where the white pixels are(indicating movement) in each square, and
+    colors those pixels.
+ *
+ */
+
 #ifndef Squares_h
 #define Squares_h
 using namespace cinder;
@@ -13,20 +20,21 @@ private:
     int n;
     
 public:
+    
+    //constructor
     squares(){
         n = 10;
     }
-
+ 
     void setN(int n1){
         n = n1;
     }
-    
+   
+   //divides screen into n*n squares and colors white pixels that indicate movement
    void draw(cv::Mat frameDiff)
    {
-       cv::Size sz = frameDiff.size();
        int squareWidth = frameDiff.cols / n;
        int squareHeight = frameDiff.rows / n;
-       
        
        //creating squares
        for(int i = 0 ; i < n ; i++){
@@ -44,62 +52,11 @@ public:
                        sum+=pixel;
                    }
                }
-               
-               
-               gl::color(sum/(float)(n*n*255), 0, 1, 1);//coloring white pixels
+               //coloring white pixels
+               gl::color(sum/(float)(n*n*255), 0, 1, 1);
                gl::drawSolidRect(curSquare);
            }
         }
-       
-       
-    
- 
-       
-        
+   }
 };
- /*
- divide(int n)
- {
-    //makes squares
-    if(n <= 1 ){return;}
-    else
-    {
-        //draw N x N squares
-    }
- }
- 
- 
- int count()
- {
-    //counts white pixels in each square
-    (iterate through all the squares)
-    {
-        int whitePixels = 0;
-        if(pixel.color == (0,0,0,0))
-        {
-            whitePixels++;
-        }
-    }
-    return whitePixels;
- 
- }
- 
- void color()
- {
-    //colors squares
-    (iterate through all the squares)
-    {
-        if(whitePixels > 0)
-        {
-            change square color to blue
-        }
-    }
- }
-   
-
-   
-*/
-};
-
-
 #endif // Squares_h
